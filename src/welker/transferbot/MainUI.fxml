@@ -1,8 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.AnchorPane?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml">
-	<!-- TODO Add Nodes -->
-</AnchorPane>
-
+<VBox prefHeight="509.0" prefWidth="841.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Open…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Save" />
+            <MenuItem mnemonicParsing="false" text="Save As…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Preferences…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Quit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Cut" />
+            <MenuItem mnemonicParsing="false" text="Copy" />
+            <MenuItem mnemonicParsing="false" text="Paste" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Documentation" />
+            <MenuItem mnemonicParsing="false" text="About" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="488.0" prefWidth="841.0" VBox.vgrow="ALWAYS">
+      <children>
+        <GridPane layoutX="18.0" layoutY="22.0" prefWidth="274.0">
+          <children>
+            <Label text="LibraryH3lp username" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <Label text="LibraryH3lp password" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <Label text="Transfer destination" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <Label text="Transfer message" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <Label text="Time to wait (seconds)" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+            <TextField fx:id="username" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <TextField fx:id="password" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="transferDestination" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="transferMessage" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="timeToWait" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+          </children>
+          <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          </columnConstraints>
+          <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          </rowConstraints>
+        </GridPane>
+        <TableView fx:id="chatTable" focusTraversable="false" layoutX="14.0" layoutY="270.0" prefHeight="200.0" prefWidth="813.0" tableMenuButtonVisible="false">
+          <columns>
+            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="139.0" text="Chat ID" fx:id="chatIDColumn" />
+            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="140.0" text="Guest ID" fx:id="guestIDColumn" />
+            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="102.0" text="Guest IP" fx:id="guestIPColumn" />
+            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="170.0" text="Origin" fx:id="originColumn" />
+            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="116.0" text="Queue" fx:id="queueColumn" />
+            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="69.0" text="Start Time" fx:id="startTimeColumn" />
+            <TableColumn prefWidth="75.0" text="Wait" fx:id="waitColumn" />
+          </columns>
+        </TableView>
+        <Label layoutX="18.0" layoutY="234.0" text="Unanswered Chats">
+          <font>
+            <Font size="18.0" />
+          </font>
+        </Label>
+        <Button fx:id="startButton" layoutX="18.0" layoutY="184.0" mnemonicParsing="false" prefWidth="120.0" text="Start" />
+        <Button fx:id="stopButton" layoutX="172.0" layoutY="184.0" mnemonicParsing="false" prefWidth="120.0" text="Stop" />
+        <TextArea fx:id="activityLog" editable="false" focusTraversable="false" layoutX="409.0" layoutY="57.0" prefHeight="127.0" prefWidth="418.0" wrapText="true" />
+        <ProgressIndicator fx:id="statusIndicator" layoutX="802.0" layoutY="29.0" prefHeight="21.0" prefWidth="24.0" progress="-1.0" visible="false" />
+        <Label layoutX="413.0" layoutY="29.0" text="Activity Log" />
+        <Separator layoutX="14.0" layoutY="228.0" prefWidth="813.0" />
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>
