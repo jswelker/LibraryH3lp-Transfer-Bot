@@ -82,8 +82,8 @@
           </font>
         </Label>
         <Button fx:id="startButton" layoutX="18.0" layoutY="184.0" mnemonicParsing="false" prefWidth="120.0" text="Start" />
-        <Button fx:id="stopButton" layoutX="172.0" layoutY="184.0" mnemonicParsing="false" prefWidth="120.0" text="Stop" />
-        <TextArea fx:id="activityLog" editable="false" focusTraversable="false" layoutX="409.0" layoutY="57.0" prefHeight="127.0" prefWidth="418.0" wrapText="true" />
+        <Button fx:id="stopButton" disable="true" layoutX="172.0" layoutY="184.0" mnemonicParsing="false" prefWidth="120.0" text="Stop" />
+        <TextArea fx:id="activityLog" editable="false" focusTraversable="false" layoutX="409.0" layoutY="57.0" prefHeight="148.0" prefWidth="418.0" wrapText="true" />
         <ProgressIndicator fx:id="statusIndicator" layoutX="802.0" layoutY="29.0" prefHeight="21.0" prefWidth="24.0" progress="-1.0" visible="false" />
         <Label layoutX="413.0" layoutY="29.0" text="Activity Log" />
         <Separator layoutX="14.0" layoutY="228.0" prefWidth="813.0" />

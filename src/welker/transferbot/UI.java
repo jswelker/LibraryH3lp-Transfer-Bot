@@ -49,7 +49,14 @@ public class UI {
 	 * What happens when the Start button is clicked
 	 */
 	private void clickStart(){
-		
+		boolean isValid = validateInput();
+		if(isValid){
+			//send off to the controller to start processing input
+			this.app.getController().createTask();
+			
+			//freeze certain fields and buttons
+			freezeUI();
+		}
 	}
 	
 	
@@ -58,13 +65,19 @@ public class UI {
 	 */
 	private void clickStop(){
 		
+		//tell the controller to stop working
+		this.app.getController().stop();
+		
+		//reset the UI
+		resetUI();
+		
 	}
 	
 	
 	/*
 	 * Update the activity log
 	 */
-	private void updateActivityLog(String message){
+	public void updateActivityLog(String message){
 		
 	}
 	
@@ -72,7 +85,7 @@ public class UI {
 	/*
 	 * Clear the chat table
 	 */
-	public void clearChatTable(){
+	private void clearChatTable(){
 		
 	}
 	
@@ -80,7 +93,7 @@ public class UI {
 	/*
 	 * Add a row to the chat table
 	 */
-	public void addToChatTable(){
+	private void addToChatTable(){
 		
 	}
 	
@@ -88,7 +101,108 @@ public class UI {
 	/*
 	 * Validate user input
 	 */
-	public void validateInput(){
+	private boolean validateInput(){
+		boolean isError = false;
+		
+		if(!validateUsername()){
+			isError = true;
+		}
+		
+		if(!validatePassword()){
+			isError = true;
+		}
+		
+		if(!validateTransferDestination()){
+			isError = true;
+		}
+		
+		if(!validateTransferMessage()){
+			isError = true;
+		}
+		
+		if(!validateTimeToWait()){
+			isError = true;
+		}
+		
+		return isError;
+		
+		
+	}
+	
+	
+	private boolean validateUsername(){
+		boolean isValidated = true;
+		
+		return isValidated;
+	}
+	
+	private boolean validatePassword(){
+		boolean isValidated = true;
+		
+		return isValidated;
+	}
+	
+	private boolean validateDestination(){
+		boolean isValidated = true;
+		
+		return isValidated;
+	}
+	
+	private boolean validateTransferDestination(){
+		boolean isValidated = true;
+		
+		return isValidated;
+	}
+	
+	private boolean validateTransferMessage(){
+		boolean isValidated = true;
+		
+		return isValidated;
+	}
+	
+	private boolean validateTimeToWait(){
+		boolean isValidated = true;
+		
+		return isValidated;
+	}
+	
+	/*
+	 * Disable fields and buttons and show the working indicator
+	 */
+	public void freezeUI(){
+		//disable input fields and start button
+		username.setDisable(true);
+		password.setDisable(true);
+		transferDestination.setDisable(true);
+		transferMessage.setDisable(true);
+		timeToWait.setDisable(true);
+		startButton.setDisable(true);
+		
+		//enable stop button
+		stopButton.setDisable(false);
+		
+		//show the status indicator
+		statusIndicator.setVisible(true);
+	}
+	
+	
+	/*
+	 * Return the UI to its original state
+	 */
+	public void resetUI(){
+		//enable input fields and start button
+		username.setDisable(false);
+		password.setDisable(false);
+		transferDestination.setDisable(false);
+		transferMessage.setDisable(false);
+		timeToWait.setDisable(false);
+		startButton.setDisable(false);
+		
+		//disable stop button
+		stopButton.setDisable(true);
+		
+		//hide the status indicator
+		statusIndicator.setVisible(false);
 		
 	}
 	

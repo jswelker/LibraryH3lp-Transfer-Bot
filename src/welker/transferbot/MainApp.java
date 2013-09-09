@@ -51,4 +51,8 @@ public class MainApp extends Application {
 		}
 	}
 	
+	public Controller getController(){
+		return this.controller;
+	}
+	
 }
